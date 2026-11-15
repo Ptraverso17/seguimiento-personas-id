@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+.pytest_cache/
+*.pt
+resultados/
+datos/
+*.mp4
+*.avi
+*.mov
+!assets/*.gif

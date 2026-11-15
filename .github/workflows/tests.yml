@@ -1,0 +1,18 @@
+name: tests
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  pytest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      # Los tests solo cubren la lógica de conteo y los informes,
+      # así que no hace falta instalar YOLO ni PyTorch.
+      - run: pip install -r requirements-dev.txt
+      - run: pytest -q
